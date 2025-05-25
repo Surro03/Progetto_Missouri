@@ -1,21 +1,21 @@
 <?php
 
-class Segnalazione{
+class Comunicazione{
 
     //attributi
-    private $idSegnalazione;
+    private $idComunicazione;
     private $testo;
     private DateTime $data_creazione;
     private $idutente;
     private $argomento;
-    private static $entity = ESegnalazione::class;
+    private static $entity = EComunicazione::class;
 
     //costruttori
-    public function __construct($testo, $idutente, $idSegnalazione)
+    public function __construct($testo, $idutente, $idComunicazione)
     {
         $this->testo = $testo;
         $this->utente = $utente;
-        $this->idSegnalazione = $idSegnalazione;
+        $this->idComunicazione = $idComunicazione;
         $this->setTime();
     }
 
@@ -27,12 +27,12 @@ class Segnalazione{
 
     public function getId()
     {
-        return $this->idSegnalazione;
+        return $this->idComunicazione;
     }
 
     public function setId($id)
     {
-        $this->idSegnalazione = $id;
+        $this->idComunicazione = $id;
     }
 
     public function gettesto()
@@ -74,8 +74,8 @@ class Segnalazione{
         return $this->utente;
     }
 
-    public function getIdSegnalazione()
+    public function getIdComunicazione()
     {
-        return $this->idSegnalazione;
+        return $this->idComunicazione;
     }   
 }
