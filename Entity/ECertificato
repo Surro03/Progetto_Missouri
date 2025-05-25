@@ -70,7 +70,7 @@ class Certificato  {
 
     public function isScaduto(): bool
     {
-        $oggi = ()'now', new DateTimeZone('Europe/Rome')
+        $oggi = new DateTime('now', new DateTimeZone('Europe/Rome'))
         return $this->data_scadenza<$oggi;
     }
 
