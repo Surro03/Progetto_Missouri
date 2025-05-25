@@ -74,11 +74,11 @@ class Certificato  {
         return $this->data_scadenza<$oggi;
     }
 
-    public __toString(): string 
-    {
-        return "Utente: ".$this->idutente."\n". 
-        "ID Certificato:".$this->idcertificato."\n". 
-        "Rilasciato il: ".$this->data_rilascio->format('d/m/Y')."\n".
-        "Scade il: ".$this->data_scadenza->format('d/m/Y');
-    }
+   public function __toString(): string 
+{
+    return "Utente: " . $this->idutente . "\n" . 
+           "ID Certificato: " . $this->idcertificato . "\n" . 
+           "Rilasciato il: " . $this->data_rilascio->format('d/m/Y') . "\n" .
+           "Scade il: " . $this->data_scadenza->format('d/m/Y');
+}
 }
