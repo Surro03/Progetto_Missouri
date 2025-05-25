@@ -76,6 +76,9 @@ class Certificato  {
 
     public __toString(): string 
     {
-        return "Certificato di {$this->idutente} con ID {this->id certifcato}, rilasciato il {$this->data_rilascio->format('d/m/Y')} e in scadenza il {$this->data_scadenza->format('d/m/Y')}.";
+        return "Utente: ".$this->idutente."\n". 
+        "ID Certificato:".$this->idcertificato."\n". 
+        "Rilasciato il: ".$this->data_rilascio->format('d/m/Y')."\n".
+        "Scade il: ".$this->data_scadenza->format('d/m/Y');
     }
 }
