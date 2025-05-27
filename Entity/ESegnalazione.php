@@ -1,6 +1,6 @@
 <?php
 
-class Segnalazione{
+class ESegnalazione{
 
     //attributi
     private $idSegnalazione;

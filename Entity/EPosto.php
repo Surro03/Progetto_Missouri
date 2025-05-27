@@ -1,23 +1,23 @@
 <?php
 
-abstract class Posto {
-    protected int $id;
-    protected string $stato;
+abstract class EPosto {
+    protected int $idPosto;
+    protected bool $occupato;
 
-    public function __construct(int $id, string $stato = 'libero') {
-        $this->id = $id;
-        $this->stato = $stato;
+    public function __construct(int $idPosto, bool $occupato = false) {
+        $this->idPosto = $idPosto;
+        $this->occupato = $occupato;
     }
 
-    public function getId(): int {
-        return $this->id;
+    public function getIdPosto(): int {
+        return $this->idPosto;
     }
 
-    public function getStato(): string {
-        return $this->stato;
+    public function getOccupato(): bool {
+        return $this->$occupato;
     }
 
-    public function setStato(string $stato): void {
-        $this->stato = $stato;
+    public function setOccupato(bool $stato): void {
+        $this->$occupato = $occupato;
     }
 }

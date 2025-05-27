@@ -1,6 +1,6 @@
 <?php
 
-class Comunicazione{
+class EComunicazione{
 
     //attributi
     private $idComunicazione;
