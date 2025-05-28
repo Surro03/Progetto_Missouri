@@ -11,8 +11,9 @@ class EComunicazione{
     private static $entity = EComunicazione::class;
 
     //costruttori
-    public function __construct($testo, $idutente, $idComunicazione)
+    public function __construct($argomento, $testo, $idutente, $idComunicazione)
     {
+        $this->argomento = $argomento;
         $this->testo = $testo;
         $this->utente = $utente;
         $this->idComunicazione = $idComunicazione;
@@ -78,4 +79,13 @@ class EComunicazione{
     {
         return $this->idComunicazione;
     }   
+
+    public function __toString(): string 
+    {
+        return "Utente: " . $this->idutente . "\n" . 
+        "ID Comuicazione: " . $this->idComunicazione . "\n" . 
+        "Creata in data: " . $this->data_creazione->format('d/m/Y') . "\n" .
+        "Argomento: " . $this->argomento . "\n";
+        "Testo: " . $this->testo . "\n";
+    }
 }

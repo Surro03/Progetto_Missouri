@@ -37,8 +37,6 @@ class ECertificato  {
         return $this->stato;
     }
 
-    }
-
     public function setIdCertificato(int $idcertificato): void
     {
         $this->idcertificato = $idcertificato;
@@ -67,10 +65,10 @@ class ECertificato  {
     }
 
    public function __toString(): string 
-{
+    {
     return "Utente: " . $this->idutente . "\n" . 
            "ID Certificato: " . $this->idcertificato . "\n" . 
            "Rilasciato il: " . $this->data_rilascio->format('d/m/Y') . "\n" .
            "Scade il: " . $this->data_scadenza->format('d/m/Y');
-}
+    }
 }
