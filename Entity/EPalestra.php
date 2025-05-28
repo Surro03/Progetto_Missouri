@@ -1,5 +1,6 @@
 <?php
 
+require_once 'EPostoPalestra.php';
 
 class EPalestra {
     private int $idPalestra;

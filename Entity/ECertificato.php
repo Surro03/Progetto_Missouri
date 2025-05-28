@@ -56,7 +56,7 @@ class ECertificato  {
 
     public function setStato(bool $stato): void
     {
-        this->stato= $stato;
+        $this->stato= $stato;
     }
 
 
