@@ -53,9 +53,7 @@ class ESalaStudio {
         $this->listaTavoli[] = $tavolo;
     }
 
-    public function method1() {
-        // Implementazione personalizzata
-    }
+ 
 }
 
 
