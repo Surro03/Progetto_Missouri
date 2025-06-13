@@ -1,5 +1,5 @@
 <?php
-require_once 'EStudente.php'
+require_once('EStudente.php');
 class ECertificato  {
     //attributi
     private int $idStudente;
