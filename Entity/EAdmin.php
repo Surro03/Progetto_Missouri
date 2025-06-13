@@ -1,6 +1,6 @@
 <?php
 
-class EAdmin extends EUtente {
+class EAdmin extends EUser {
     private string $id;
 
     public function __construct(string $id, string $email, string $password) {
