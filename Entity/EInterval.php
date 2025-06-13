@@ -28,6 +28,5 @@ class EInteraval {
         }
         $this->end = $end;
     }
-    public
 
 }
