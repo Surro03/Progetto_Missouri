@@ -4,7 +4,7 @@ class ESegreteria extends EUtente {
     private int $id;
 
     public function __construct(int $idSegreteria, string $email, string $password) {
-        parent::__construct($email, $password); // Costruttore della classe base
+        parent::__construct($email, $password); 
         $this->idSegreteria = $idSegreteria;
     }
 
