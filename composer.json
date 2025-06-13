@@ -1,0 +1,11 @@
+{
+    "name": "surro/progetto_missouri",
+    "autoload": {
+        "psr-4": {
+            "Surro\\ProgettoMissouri\\": "src/"
+        }
+    },
+    "require": {
+        "smarty/smarty": "^5.5"
+    }
+}
