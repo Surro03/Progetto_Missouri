@@ -1,6 +1,6 @@
 <?php
 
-class Segnalazione{
+class ESegnalazione{
 
     //attributi
     private $idSegnalazione;
@@ -11,8 +11,9 @@ class Segnalazione{
     private static $entity = ESegnalazione::class;
 
     //costruttori
-    public function __construct($testo, $idutente, $idSegnalazione)
+    public function __construct($argomento, $testo, $idutente, $idSegnalazione)
     {
+        $this->argomento = $argomento;
         $this->testo = $testo;
         $this->utente = $utente;
         $this->idSegnalazione = $idSegnalazione;
@@ -78,4 +79,13 @@ class Segnalazione{
     {
         return $this->idSegnalazione;
     }   
+
+    public function __toString(): string 
+    {
+        return "Utente: " . $this->idutente . "\n" . 
+        "ID CSegnalazione: " . $this->idSegnalazione . "\n" . 
+        "Creata in data: " . $this->data_creazione->format('d/m/Y') . "\n" .
+        "Argomento: " . $this->argomento . "\n";
+        "Testo: " . $this->testo . "\n";
+    }
 }

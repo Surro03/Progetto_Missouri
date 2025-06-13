@@ -1,8 +1,8 @@
 <?php
 
 abstract class EUtente {
-    private string $email;
-    private string $passwordHash;
+    protected string $email;
+    protected string $passwordHash;
 
     public function __construct(string $email, string $password) {
         $this->email = $email;
