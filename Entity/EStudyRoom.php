@@ -4,7 +4,7 @@
 require_once 'ETavolo.php';
 
 class ESalaStudio {
-    private static final int $idSalaStudio;
+    private static int $idSalaStudio;
     private DateTime $orarioApertura;
     private DateTime $orarioChiusura;
 
