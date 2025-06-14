@@ -7,8 +7,5 @@ class EAdmin extends EUser {
         parent::__construct($email, $password);
 
     }
-
-
-
 }
 ?>
