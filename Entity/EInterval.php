@@ -16,7 +16,7 @@ class EInteraval {
     public function getEnd(): DateTime {
         return $this->end;
     }
-    public funtion setStart(DateTime $start): void {
+    public function setStart(DateTime $start): void {
         if ($start > $this->end) {
             throw new InvalidArgumentException("Start date must be before end date.");
         }
@@ -28,5 +28,9 @@ class EInteraval {
         }
         $this->end = $end;
     }
+<<<<<<< HEAD
     public
+=======
+
+>>>>>>> origin/main
 }
