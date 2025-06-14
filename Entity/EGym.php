@@ -23,5 +23,4 @@ class EGym {
         $this->gymSeatList = $gymSeatList;
     }
 }
-
 ?>

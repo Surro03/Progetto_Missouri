@@ -17,5 +17,4 @@ class EStudyRoomSeat extends ESeat {
         $this->tableId = $tableId;
     }
 }
-
 ?>

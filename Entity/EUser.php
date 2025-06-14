@@ -34,5 +34,4 @@ abstract class EUser {
         return "User: $this->email";
     }
 }
-
 ?>
