@@ -9,7 +9,7 @@ class FDataBase {
     private function __construct() {
 
         try {
-			$this->dbconnection = new PDO ("mysql:dbname=".$GLOBALS['database'].";host=localhost; charset=utf8;", $GLOBALS['username'], $GLOBALS['password']);
+			$this->dbconnection = new PDO("mysql:dbname=".DB_NAME.";host=".DB_HOST."; charset=utf8;", DB_USER, DB_PASS);;
 
 		} catch (PDOException $e) {
 			echo "Error detected: " . $e->getMessage();
