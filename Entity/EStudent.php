@@ -52,5 +52,4 @@ class EStudent extends EUser {
         Student ID: $this->studentId";
     }
 }
-
 ?>

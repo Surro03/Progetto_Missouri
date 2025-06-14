@@ -21,5 +21,4 @@ class ESecretary extends EUser {
         return "Secretary ID: $this->secretaryId\nEmail: $this->email";
     }
 }
-
 ?>

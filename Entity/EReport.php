@@ -84,5 +84,4 @@ class EReport {
                "Text: " . $this->text . "\n";
     }
 }
-
 ?>
