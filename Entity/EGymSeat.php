@@ -17,5 +17,4 @@ class EGymSeat extends ESeat {
         $this->gymId = $gymId;
     }
 }
-
 ?>
