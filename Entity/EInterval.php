@@ -1,5 +1,6 @@
 <?php
 class EInteraval {
+    private $intervalId;
     private DateTime $start;
     private DateTime $end;
 

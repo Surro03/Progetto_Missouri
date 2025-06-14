@@ -19,9 +19,13 @@ class FDataBase {
 /** Verifies if an instance of the class already exists, if not creare a new one */
     public static function getInstance() {
         if (!self::$instance) {
-            self::$instance = new FDatabase();
+            self::$instance = new FDataBase();
         }
         return self::$instance;
+    }
+    
+    public function closeDBConnnetcion() {
+        static::$istance = null;
     }
 
 }
