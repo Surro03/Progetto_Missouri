@@ -1,45 +1,39 @@
 <?php
 
-class ETavolo {
+class ETable {
 
-    private int $IDTavolo;
-    private int $IDSalaStudio;
-    private array $ListaPostiSala;
+    private int $tableId;
+    private int $studyRoomId;
+    private array $seatList;
 
-    public function __construct(int $IDTavolo, int $IDSalaStudio, array $ListaPostiSala = []) {
-        $this->IDTavolo = $IDTavolo;
-        $this->IDSalaStudio = $IDSalaStudio;
-        $this->ListaPostiSala = $ListaPostiSala;
+    public function __construct(int $tableId, int $studyRoomId, array $seatList = []) {
+        $this->tableId = $tableId;
+        $this->studyRoomId = $studyRoomId;
+        $this->seatList = $seatList;
     }
 
-   public function getIDTavolo(): int {
-        return $this->IDTavolo;
+    public function getTableId(): int {
+        return $this->tableId;
     }
 
-    public function setIDTavolo(int $IDTavolo): void {
-        $this->IDTavolo = $IDTavolo;
+    public function setTableId(int $tableId): void {
+        $this->tableId = $tableId;
     }
 
-    public function getIDSalaStudio(): int {
-        return $this->IDSalaStudio;
+    public function getStudyRoomId(): int {
+        return $this->studyRoomId;
     }
 
-    public function setIDSalaStudio(int $IDSalaStudio): void {
-        $this->IDSalaStudio = $IDSalaStudio;
+    public function setStudyRoomId(int $studyRoomId): void {
+        $this->studyRoomId = $studyRoomId;
     }
 
-    public function getListaPostiSala(): array {
-        return $this->ListaPostiSala;
+    public function getSeatList(): array {
+        return $this->seatList;
     }
 
-    public function setListaPostiSala(array $ListaPostiSala): void {
-        $this->ListaPostiSala = $ListaPostiSala;
+    public function setSeatList(array $seatList): void {
+        $this->seatList = $seatList;
     }
-
-
-
-
 }
-
-
 ?>

@@ -1,24 +1,24 @@
 <?php
-class ESegreteria extends EUtente {
-    
-    private int $id;
 
-    public function __construct(int $idSegreteria, string $email, string $password) {
+class ESecretary extends EUser {
+    
+    private int $secretaryId;
+
+    public function __construct(int $secretaryId, string $email, string $password) {
         parent::__construct($email, $password); 
-        $this->idSegreteria = $idSegreteria;
+        $this->secretaryId = $secretaryId;
     }
 
     public function getId(): int {
-        return $this->idSegreteria;
+        return $this->secretaryId;
     }
 
-    public function setId(int $idSegreteria): void {
-        $this->idSegreteria = $idSegreteria;
+    public function setId(int $secretaryId): void {
+        $this->secretaryId = $secretaryId;
     }
 
     public function __toString(): string {
-        return "Segreteria ID: $this->idSegreteria\nEmail: $this->email";
+        return "Secretary ID: $this->secretaryId\nEmail: $this->email";
     }
 }
-
 ?>
