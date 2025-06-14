@@ -1,5 +1,5 @@
 <?php
-class FStudent {
+class FStudyRoom {
     private static $table = "studyrooms";
 
     private static $value = "(:studyRoomId, :openingTime, :closingTime, :tableList)";

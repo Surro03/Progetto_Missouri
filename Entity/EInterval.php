@@ -29,5 +29,5 @@ class EInteraval {
         }
         $this->end = $end;
     }
-
+    
 }

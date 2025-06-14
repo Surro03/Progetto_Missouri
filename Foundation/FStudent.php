@@ -2,7 +2,7 @@
 class FStudent {
     private static $table = "students";
 
-    private static $value = "(:studentId,:firstName, :lastName, birthDate)";
+    private static $value = "(:studentId,:firstName, :lastName, birthDate,:email,:passwordHash,:userId)";
 
     private static $key = "studentId";
 
