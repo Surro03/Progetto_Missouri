@@ -2,11 +2,11 @@
 
 require_once 'ETable.php';
 
-class ESalaStudio {
-    private static final int $idSalaStudio;
-    private DateTime $orarioApertura;
-    private DateTime $orarioChiusura;
-    private array $listaTavoli;
+class EStudyRoom {
+    private static final int $studyRoomId;
+    private DateTime $openingTime;
+    private DateTime $closingTime;
+    private array $tableList;
 
     public function __construct(int $studyRoomId, DateTime $openingTime, DateTime $closingTime, array $tableList = []) {
         $this->studyRoomId = $studyRoomId;
