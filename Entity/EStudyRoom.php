@@ -1,55 +1,73 @@
 <?php
 
+require_once 'ETable.php';
 
-require_once 'ETavolo.php';
+class EStudyRoom {
+    private int $studyRoomId;
+    private DateTime $openingTime;
+    private DateTime $closingTime;
+    private array $tableList;
 
-class ESalaStudio {
-    private static int $idSalaStudio;
-    private DateTime $orarioApertura;
-    private DateTime $orarioChiusura;
-
-    private array $listaTavoli;
-
-    public function __construct( DateTime $orarioApertura, DateTime $orarioChiusura, array $listaTavoli = []) {
-        $this->idSalaStudio = 1;
-        $this->orarioApertura = $orarioApertura;
-        $this->orarioChiusura = $orarioChiusura;
-        $this->listaTavoli = $listaTavoli;
+    public function __construct(int $studyRoomId, DateTime $openingTime, DateTime $closingTime, array $tableList = []) {
+        $this->studyRoomId = $studyRoomId;
+        $this->openingTime = $openingTime;
+        $this->closingTime = $closingTime;
+        $this->tableList = $tableList;
     }
 
-    public function getIdSalaStudio(): int {
-        return $this->idSalaStudio;
+    public function getStudyRoomId(): int {
+        return $this->studyRoomId;
     }
 
-    public function getListaTavoli(): array {
-        return $this->listaTavoli;
+    public function setStudyRoomId(int $studyRoomId): void {
+        $this->studyRoomId = $studyRoomId;
     }
 
-    public function getOrarioApertura(): DateTime {
-        return $this->orarioApertura;
+    public function getTableList(): array {
+        return $this->tableList;
     }
 
-
-    public function getOrarioChiusura(): DateTime {
-        return $this->orarioChiusura;
+    public function setTableList(array $tableList): void {
+        $this->tableList = $tableList;
     }
 
-    public function setOrarioChiusura(DateTime $orarioChiusura): void {
-        $this->orarioChiusura = $orarioChiusura;
-    }
-    public function setOrarioApertura(DateTime $orarioApertura): void {
-        $this->orarioApertura = $orarioApertura;
+    public function getOpeningTime(): DateTime {
+        return $this->openingTime;
     }
 
-    public function setListaTavoli(array $listaTavoli): void {
-        $this->listaTavoli = $listaTavoli;
-    }
-    public function setIdSalaStudio(int $IdSalaStudio): void {
-        $this->IdSalaStudio = $IdSalaStudio;
-    }
-    public function aggiungiTavolo(ETavolo $tavolo): void {
-        $this->listaTavoli[] = $tavolo;
+    public function setOpeningTime(DateTime $openingTime): void {
+        $this->openingTime = $openingTime;
     }
 
- 
+    public function getClosingTime(): DateTime {
+        return $this->closingTime;
+    }
+
+    public function setClosingTime(DateTime $closingTime): void {
+        $this->closingTime = $closingTime;
+    }
+
+    public function addTable(ETable $table): void {
+        $this->tableList[] = $table;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+?>

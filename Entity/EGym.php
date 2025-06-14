@@ -1,36 +1,27 @@
 <?php
 
-require_once 'EPostoPalestra.php';
+require_once 'EGymSeat.php';
 
-class EPalestra {
-    private int $idPalestra;
-    private array $ListaPostiPalestra;
+class EGym {
+    private int $gymId;
+    private array $gymSeatList;
 
-    public function __construct(int $idPalestra, array $ListaPostiPalestra = []) {
-        $this->idPalestra = $idPalestra;
-        $this->ListaPostiPalestra = $ListaPostiPalestra;
+    public function __construct(int $gymId, array $gymSeatList = []) {
+        $this->gymId = $gymId;
+        $this->gymSeatList = $gymSeatList;
     }
 
-    public function getIDPalestra(): int {
-        return $this->IDPalestra;
+    public function getGymId(): int {
+        return $this->gymId;
     }
 
-
-    public function getListaPostiPalestra(): array {
-        return $this->ListaPostiPalestra;
+    public function getGymSeatList(): array {
+        return $this->gymSeatList;
     }
 
-    public function setListaPostiPalestra(array $ListaPostiPalestra): void {
-        $this->ListaPostiPalestra = $ListaPostiPalestra;
+    public function setGymSeatList(array $gymSeatList): void {
+        $this->gymSeatList = $gymSeatList;
     }
-
-
 }
-
-
-
-
-
-
 
 ?>
