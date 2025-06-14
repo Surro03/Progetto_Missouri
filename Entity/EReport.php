@@ -10,13 +10,12 @@ class EReport {
     private $topic;
     private static $entity = EReport::class;
     private $removed = false; // initialized to avoid undefined errors
-    private $user;
 
     // Constructor
-    public function __construct($topic, $text, $user, $reportId) {
+    public function __construct($topic, $text, $userId, $reportId) {
         $this->topic = $topic;
         $this->text = $text;
-        $this->user = $user;
+        $this->userId = $userId;
         $this->reportId = $reportId;
         $this->setTime();
     }
