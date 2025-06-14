@@ -1,28 +1,21 @@
 <?php
 
-class EPostoSalaStudio extends EPosto {
+class EStudyRoomSeat extends ESeat {
 
-    private int $IDTavolo;
+    private int $tableId;
 
-    public function __construct( int $IDTavolo) {
-         parent::__construct($occupato, $idPosto);
-        $this->IDTavolo = $IDTavolo;
-        
+    public function __construct(int $seatId, bool $status, int $tableId) {
+        parent::__construct($seatId, $status);
+        $this->tableId = $tableId;
     }
 
-    public function getIDTavolo(): int {
-        return $this->IDTavolo;
+    public function getTableId(): int {
+        return $this->tableId;
     }
 
-
-
-
-
-   
+    public function setTableId(int $tableId): void {
+        $this->tableId = $tableId;
+    }
 }
-
-
-
-
 
 ?>

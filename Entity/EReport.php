@@ -1,91 +1,88 @@
 <?php
 
-class ESegnalazione{
+class EReport {
 
-    //attributi
-    private $idSegnalazione;
-    private $testo;
-    private DateTime $data_creazione;
-    private $idutente;
-    private $argomento;
-    private static $entity = ESegnalazione::class;
+    // Attributes
+    private $reportId;
+    private $text;
+    private DateTime $creationDate;
+    private $userId;
+    private $topic;
+    private static $entity = EReport::class;
+    private $removed = false; // initialized to avoid undefined errors
+    private $user;
 
-    //costruttori
-    public function __construct($argomento, $testo, $idutente, $idSegnalazione)
-    {
-        $this->argomento = $argomento;
-        $this->testo = $testo;
-        $this->utente = $utente;
-        $this->idSegnalazione = $idSegnalazione;
+    // Constructor
+    public function __construct($topic, $text, $user, $reportId) {
+        $this->topic = $topic;
+        $this->text = $text;
+        $this->user = $user;
+        $this->reportId = $reportId;
         $this->setTime();
     }
 
-    //metodi
-    public static function getEntity(): string
-    {
+    // Static entity name getter
+    public static function getEntity(): string {
         return self::$entity;
     }
 
-    public function getId()
-    {
-        return $this->idSegnalazione;
+    // ID getter/setter
+    public function getId() {
+        return $this->reportId;
     }
 
-    public function setId($id)
-    {
-        $this->idSegnalazione = $id;
+    public function setId($id) {
+        $this->reportId = $id;
     }
 
-    public function gettesto()
-    {
-        return $this->testo;
+    // Text getter
+    public function getText() {
+        return $this->text;
     }
 
-    public function getTime()
-    {
-        return $this->data_creazione;
+    // Date getters/setters
+    public function getTime(): DateTime {
+        return $this->creationDate;
     }
 
-    private function setTime()
-    {
-        $this->data_creazione = new DateTime("now");
+    private function setTime() {
+        $this->creationDate = new DateTime("now");
     }
 
-    public function getTimeStr()
-    {
-        return $this->data_creazione->format('Y-m-d H:i:s');
+    public function getTimeStr(): string {
+        return $this->creationDate->format('Y-m-d H:i:s');
     }
 
-    public function setCreationTime(DateTime $dateTime){
-        $this->data_creazione = $dateTime;
+    public function setCreationTime(DateTime $dateTime): void {
+        $this->creationDate = $dateTime;
     }
 
-    public function isBanned(): bool
-    {
+    // Ban/Removed status
+    public function isBanned(): bool {
         return $this->removed;
     }
 
-    public function setBan(bool $removed): void
-    {
+    public function setBan(bool $removed): void {
         $this->removed = $removed;
     }
 
-    public function getutente()
-    {
-        return $this->utente;
+    // User getter
+    public function getUser() {
+        return $this->user;
     }
 
-    public function getIdSegnalazione()
-    {
-        return $this->idSegnalazione;
-    }   
+    public function getReportId() {
+        return $this->reportId;
+    }
 
-    public function __toString(): string 
-    {
-        return "Utente: " . $this->idutente . "\n" . 
-        "ID CSegnalazione: " . $this->idSegnalazione . "\n" . 
-        "Creata in data: " . $this->data_creazione->format('d/m/Y') . "\n" .
-        "Argomento: " . $this->argomento . "\n";
-        "Testo: " . $this->testo . "\n";
+    // Debug output
+    public function __toString(): string {
+        return "User: " . $this->userId . "\n" .
+               "Report ID: " . $this->reportId . "\n" .
+               "Created on: " . $this->creationDate->format('d/m/Y') . "\n" .
+               "Topic: " . $this->topic . "\n" .
+               "Text: " . $this->text . "\n";
     }
 }
+
+?>
