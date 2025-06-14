@@ -21,3 +21,4 @@ abstract class ESeat {
         $this->occupied = $status;
     }
 }
+?>

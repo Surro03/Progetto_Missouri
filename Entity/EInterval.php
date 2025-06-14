@@ -28,9 +28,7 @@ class EInteraval {
         }
         $this->end = $end;
     }
-<<<<<<< HEAD
-    public
-=======
-
->>>>>>> origin/main
 }
+    ?>
+    
+ 
