@@ -2,7 +2,7 @@
 class FUser {
     private static $table = "users";
 
-    private static $value = "(:userId,:email,:passwordHash)";
+    private static $value = "(:email, :passwordHash, :userId)";
 
     private static $key = "userId";
 

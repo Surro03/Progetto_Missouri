@@ -2,7 +2,7 @@
 class FTable {
     private static $table = "tables";
 
-    private static $value = "(:tableId,:studyRoomId, :seatList)";
+    private static $value = "(:studyRoomId, :seatList, :tableId)";
 
     private static $key = "tableId";
 

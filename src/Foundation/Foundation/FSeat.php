@@ -2,7 +2,7 @@
 class FSeat {
     private static $table = "seats";
 
-    private static $value = "(:seatId, :status,)";
+    private static $value = "( :status, :seatId)";
 
     private static $key = "seatId";
 

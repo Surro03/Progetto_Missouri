@@ -2,7 +2,7 @@
 class FGym {
     private static $table = "gyms";
 
-    private static $value = "(:gymId, :gymSeatList)";
+    private static $value = "( :gymSeatList, :gymId)";
 
     private static $key = "gymId";
 

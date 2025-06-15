@@ -2,7 +2,7 @@
 class FInterval  {
     private static $table = "intervals";
 
-    private static $value = "(:intervalId, :strart, :end)";
+    private static $value = "( :strart, :end, :intervalId)";
 
     private static $key = "intervalId";
 

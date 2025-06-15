@@ -2,9 +2,9 @@
 class FReport {
     private static $table = "reports";
 
-    private static $value = "(:reportId, :text, :ceationDate, :userId, :topic, :removed, :userId)";
+    private static $value = "( :text, :ceationDate, :userId, :topic, :removed, :userId, :reportId)";
 
-    private static $key = "gymId";
+    private static $key = "reportId";
 
     
 

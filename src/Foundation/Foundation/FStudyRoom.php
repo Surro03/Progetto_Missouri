@@ -2,7 +2,7 @@
 class FStudyRoom {
     private static $table = "studyrooms";
 
-    private static $value = "(:studyRoomId, :openingTime, :closingTime, :tableList)";
+    private static $value = "( :openingTime, :closingTime, :tableList, :studyRoomId)";
 
     private static $key = "studyRoomId";
 

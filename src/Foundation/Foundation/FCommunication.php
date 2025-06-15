@@ -2,7 +2,7 @@
 class FCommunication {
     private static $table = "communications";
 
-    private static $value = "(:idCommunication, :text, :creationDate, :idUser, :subject)";
+    private static $value = "( :text, :creationDate, :idUser, :subject, :idCommunication)";
 
     private static $key = "idCommunication";
 
