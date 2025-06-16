@@ -2,7 +2,7 @@
 class FInterval  {
     private static $table = "intervals";
 
-    private static $value = "( :strart, :end, :intervalId)";
+    private static $value = "( :start, :end, :intervalId)";
 
     private static $key = "intervalId";
 
@@ -24,5 +24,10 @@ class FInterval  {
     public static function getClass(){
         return self::class;
     }
-
+    
+public static function bind($stmt, EInterval $interval) {
+        $stmt->bindValue(":start", $interval->getStart(), PDO::PARAM_STR);
+        $stmt->bindValue(":end", $interval->getEnd(), PDO::PARAM_STR);
+        $stmt->bindValue(":intervalId", $interval->getIntervalId(), PDO::PARAM_INT);
+    }
 }

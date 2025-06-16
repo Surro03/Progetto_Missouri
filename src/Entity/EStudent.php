@@ -48,7 +48,7 @@ class EStudent extends EUser {
 
         $this->certificates = new ArrayCollection();
     }
-
+//Getters
     public function getFirstName(): string {
         return $this->firstName;
     }
@@ -64,7 +64,7 @@ class EStudent extends EUser {
     public function getBirthDate(): DateTime {
         return $this->birthDate;
     }
-
+//Setters
     public function setFirstName(string $firstName): void {
         $this->firstName = $firstName;
     }
