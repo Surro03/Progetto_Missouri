@@ -26,18 +26,13 @@ class ETable
 
     #[ORM\OneToMany(mappedBy: "table", targetEntity: EStudyRoomSeat::class)]
     private Collection $studyRoomSeat;
-// Constructor
+
     public function __construct(array $seatList = [])
     {
         $this->seatList = $seatList;
         $this->studyRoomSeat = new ArrayCollection();
     }
-// Static entity name getter
-    public static function getEntity(): string
-    {
-        return self::class;
-    }
-// Getters and Setters
+
     public function getTableId(): int
     {
         return $this->tableId;

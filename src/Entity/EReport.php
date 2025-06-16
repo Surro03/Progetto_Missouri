@@ -34,6 +34,7 @@ class EReport {
     #[ORM\JoinColumn(name: "studentId", referencedColumnName: "studentId", nullable: false)]
     private ?EStudent $student = null;
 
+    private static $entity = EReport::class;
     // Constructor
     public function __construct($topic, $text, $reportId, $userId ) {
         $this->topic = $topic;
@@ -43,73 +44,61 @@ class EReport {
         $this->setTime();
     }
 
-     // Static entity name getter
+    // Static entity name getter
     public static function getEntity(): string {
         return self::$entity;
     }
-    //Setters
-    private function setTime() {
-        $this->creationDate = new DateTime("now");
+
+    // ID getter/setter
+    public function getId() {
+        return $this->reportId;
     }
 
-    public function setReportId($id) {
+    public function setId($id) {
         $this->reportId = $id;
     }
 
-    public function setText(string $text): void {
-        $this->text = $text;
-    }
-    
-    public function setUserId(int $userId): void {
-        $this->userId = $userId;
-    }
-    
-    public function setCreationTime(DateTime $dateTime): void {
-        $this->creationDate = $dateTime;
-    }
-
-    public function setTopic(string $topic): void {
-        $this->topic = $topic;
-    }
-//Getters
-    public function getReportId() {
-        return $this->reportId;
-    }
-   
-    public function getCreationTime(): DateTime {
-        return $this->creationDate;
-    }
-  
+    // Text getter
     public function getText() {
         return $this->text;
     }
 
-    public function getTopic() {
-        return $this->topic;
+    // Date getters/setters
+    public function getTime(): DateTime {
+        return $this->creationDate;
     }
 
-    public function getUserId(): int {
-        return $this->userId;
+    private function setTime() {
+        $this->creationDate = new DateTime("now");
     }
-    
-    public function getCreationTimeStr(): string {
+
+    public function getTimeStr(): string {
         return $this->creationDate->format('Y-m-d H:i:s');
     }
 
-    //Status methods
-    public function isRemoved(): bool {
+    public function setCreationTime(DateTime $dateTime): void {
+        $this->creationDate = $dateTime;
+    }
+
+    // Ban/Removed status
+    public function isBanned(): bool {
         return $this->removed;
     }
 
-    public function Remove(): void {
-        $this->removed = true;
+    public function setBan(bool $removed): void {
+        $this->removed = $removed;
     }
 
-    public function Restore(): void {
-        $this->removed = true;
+    // User getter
+    public function getUser() {
+        return $this->user;
     }
 
-    // ToString method
+    public function getReportId() {
+        return $this->reportId;
+    }
+
+    // Debug output
     public function __toString(): string {
         return "User: " . $this->userId . "\n" .
                "Report ID: " . $this->reportId . "\n" .

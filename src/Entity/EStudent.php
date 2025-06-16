@@ -38,7 +38,7 @@ class EStudent extends EUser {
 
     #[ORM\OneToOne(mappedBy: "student", targetEntity: EGymReservation::class, cascade: ["persist", "remove"])]
     private ?EGymReservation $gymReservation = null;
-//Constructor
+
     public function __construct(string $firstName, string $lastName, string $email, string $studentId, string $password, string $birthDate) {
         parent::__construct($email, $password); // Call the parent class constructor
         $this->firstName = $firstName;
@@ -48,11 +48,7 @@ class EStudent extends EUser {
 
         $this->certificates = new ArrayCollection();
     }
-// Static getter
-    public static function getEntity(): string {
-        return self::$entity;
-    }
-//Getters
+
     public function getFirstName(): string {
         return $this->firstName;
     }
@@ -68,7 +64,7 @@ class EStudent extends EUser {
     public function getBirthDate(): DateTime {
         return $this->birthDate;
     }
-//Setters
+
     public function setFirstName(string $firstName): void {
         $this->firstName = $firstName;
     }

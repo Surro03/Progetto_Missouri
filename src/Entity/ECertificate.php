@@ -26,20 +26,17 @@ class ECertificate  {
     #[ORM\JoinColumn(name: "studentId", referencedColumnName: "studentId")]
     private EStudent $student;
 
-
 //Constructor
-    public function __construct($idcertificate,$release_date,$expiration_date)
+    public function __construct(int $studentId, int $idcertificate, DateTime $release_date, DateTime $expiration_date)
     {
+        $this->studentId = $studentId;
         $this->idCertificate = $idcertificate;
         $this->release_Date = $release_date;
         $this->expiration_Date = $expiration_date;
 
     }
-    // Static getter
-    public static function getEntity(): string {
-        return self::$entity;
-    }
-
+//Methods
+    
     // Getters
     public function getStudentId(): int {
         return $this->studentId;

@@ -28,18 +28,17 @@ class EStudyRoom{
 
     #[ORM\OneToMany(mappedBy: "studyRoom", targetEntity: ETable::class)]
     private Collection $tableList;
-//Constructor
-    public function __construct(int $studyRoomId, DateTime $openingTime, DateTime $closingTime, array $tableList = []) {
+
+    public function __construct(int $studyRoomId, \DateTime $openingTime, \DateTime $closingTime)
+    {
         $this->studyRoomId = $studyRoomId;
         $this->openingTime = $openingTime;
         $this->closingTime = $closingTime;
-        $this->tableList = $tableList;
+
+        $this->studyRoomReservations = new ArrayCollection();
+        $this->tableList = new ArrayCollection();
     }
- // Static entity name getter
-    public static function getEntity(): string {
-        return self::$entity;
-    }
- //Getters and Setters
+
     public function getStudyRoomId(): int
     {
         return $this->studyRoomId;
