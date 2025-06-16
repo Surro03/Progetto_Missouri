@@ -28,9 +28,8 @@ class ECertificate  {
 
 
 //Constructor
-    public function __construct(EStudent $student,$idcertificate,$release_date,$expiration_date)
+    public function __construct($idcertificate,$release_date,$expiration_date)
     {
-        $this->idStudent = $student->getMatricola();
         $this->idCertificate = $idcertificate;
         $this->release_Date = $release_date;
         $this->expiration_Date = $expiration_date;
