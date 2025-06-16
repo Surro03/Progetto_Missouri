@@ -6,10 +6,10 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Entity]
 #[ORM\Table(name: 'gymSeats')]
 class EGymSeat extends ESeat {
-/** 
+
    *#[ORM\Column(type: "integer", name: "gymId")]
    *private int $gymId;
-*/
+
     // RELATIONSHIPS
     #[ORM\ManyToOne(targetEntity: EGym::class, inversedBy: "gymSeatList")]
     #[ORM\JoinColumn(name: "gymId", referencedColumnName: "gymId", nullable: false)]

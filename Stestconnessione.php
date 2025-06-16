@@ -1,5 +1,5 @@
 <?php
-
+/*
 
 require_once __DIR__ . '/bootstrap.php';
 
@@ -15,8 +15,7 @@ try {
     echo "✔ Connessione al database riuscita!";
 } catch (\Exception $e) {
     echo "❌ Errore nella connessione: " . $e->getMessage();
-} 
-    
+}  
    /*
 require_once 'config.php';
 
