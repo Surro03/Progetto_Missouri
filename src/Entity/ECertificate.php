@@ -23,6 +23,7 @@ class ECertificate  {
 
     #[ORM\Column(type: "datetime")]
     private DateTime $expiration_Date;
+
 //Constructor
     public function __construct(Estudent $student,$idcertificate,$release_date,$expiration_date)
     {
@@ -32,8 +33,10 @@ class ECertificate  {
         $this->expiration_Date = $expiration_date;
 
     }
-//Methods
-    
+    // Static getter
+    public static function getEntity(): string {
+        return self::$entity;
+    }
     // Getters
     public function getIdStudent(): int {
         return $this->idStudent;

@@ -39,7 +39,11 @@ class EReport {
         $this->setTime();
     }
 
-
+ // Static entity name getter
+    public static function getEntity(): string {
+        return self::$entity;
+    }
+    //Setters
     private function setTime() {
         $this->creationDate = new DateTime("now");
     }
@@ -60,24 +64,18 @@ class EReport {
         $this->creationDate = $dateTime;
     }
 
-    // Static entity name getter
-    public static function getEntity(): string {
-        return self::$entity;
-    }
-
     public function setTopic(string $topic): void {
         $this->topic = $topic;
     }
-
-    // ID getter
+//Getters
     public function getReportId() {
         return $this->reportId;
     }
-    // Date getters
+   
     public function getCreationTime(): DateTime {
         return $this->creationDate;
     }
-    // Text getter
+  
     public function getText() {
         return $this->text;
     }
@@ -107,9 +105,7 @@ class EReport {
         $this->removed = true;
     }
 
-
-
-    // Debug output
+    // ToString method
     public function __toString(): string {
         return "User: " . $this->userId . "\n" .
                "Report ID: " . $this->reportId . "\n" .

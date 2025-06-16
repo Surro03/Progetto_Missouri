@@ -17,12 +17,16 @@ class EGym {
 
     #[ORM\Column(type: "json", nullable: true)]
     private array $gymSeatList;
-
+//Constructor
     public function __construct(int $gymId, array $gymSeatList = []) {
         $this->gymId = $gymId;
         $this->gymSeatList = $gymSeatList;
     }
-
+// Static getter
+    public static function getEntity(): string {
+        return self::$entity;
+    }
+//Getters
     public function getGymId(): int {
         return $this->gymId;
     }
@@ -30,7 +34,10 @@ class EGym {
     public function getGymSeatList(): array {
         return $this->gymSeatList;
     }
-
+//Setters
+    public function setGymId(int $gymId): void {
+        $this->gymId = $gymId;
+    }
     public function setGymSeatList(array $gymSeatList): void {
         $this->gymSeatList = $gymSeatList;
     }

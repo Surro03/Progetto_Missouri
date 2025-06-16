@@ -12,18 +12,22 @@ abstract class EUser {
 
      #[ORM\Column(type: "string", length: 255)]
     protected string $passwordHash;
-
+//Constructor
     public function __construct(string $email, string $password) {
         $this->email = $email;
         $this->setPassword($password); // Save the password as a hashed string
     }
 
-    // Getter for email
+ // Static entity name getter
+    public static function getEntity(): string {
+        return self::$entity;
+    }
+    
+// Getters and Setters
     public function getEmail(): string {
         return $this->email;
     }
 
-    // Setter for email
     public function setEmail(string $email): void {
         $this->email = $email;
     }
@@ -38,7 +42,7 @@ abstract class EUser {
         return password_verify($password, $this->passwordHash);
     }
 
-    // For debug (without showing the password)
+    // ToString (without showing the password)
     public function __toString(): string {
         return "User: $this->email";
     }

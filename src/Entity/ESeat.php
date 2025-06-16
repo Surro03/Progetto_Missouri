@@ -18,7 +18,11 @@ abstract class ESeat {
         $this->seatId = $seatId;
         $this->isAvailable = True;
     }
-
+    // Static entity name getter
+    public static function getEntity(): string {
+        return self::$entity;
+    }
+    //Getters and Setters
     public function getSeatId(): int {
         return $this->seatId;
     }

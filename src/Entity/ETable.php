@@ -17,13 +17,17 @@ class ETable {
 
     #[ORM\Column(type: "json", nullable: true)]
     private array $seatList;
-
+//Constructor
     public function __construct(int $tableId, int $studyRoomId, array $seatList = []) {
         $this->tableId = $tableId;
         $this->studyRoomId = $studyRoomId;
         $this->seatList = $seatList;
     }
-
+ // Static entity name getter
+    public static function getEntity(): string {
+        return self::$entity;
+    }
+    // Getters and Setters
     public function getTableId(): int {
         return $this->tableId;
     }
