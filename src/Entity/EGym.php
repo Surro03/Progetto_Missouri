@@ -19,18 +19,24 @@ class EGym {
 #[ORM\OneToMany(mappedBy: "gym", targetEntity: EGymSeat::class, cascade: ["persist", "remove"])]
     private Collection $gymSeatList;
 
-    // Constructor
-    public function __construct() {
-        $this->gymSeatList = new ArrayCollection();
+   //Constructor
+    public function __construct(int $gymId, array $gymSeatList = []) {
+        $this->gymId = $gymId;
+        $this->gymSeatList = $gymSeatList;
     }
-    // Getters
+// Static getter
+    public static function getEntity(): string {
+        return self::$entity;
+    }
+//Getters
     public function getGymId(): int {
         return $this->gymId;
     }
-    public function getGymSeatList(): Collection {
+
+    public function getGymSeatList(): array {
         return $this->gymSeatList;
     }
-    // Setters
+//Setters
     public function setGymId(int $gymId): void {
         $this->gymId = $gymId;
     }
