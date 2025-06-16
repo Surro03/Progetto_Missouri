@@ -25,4 +25,9 @@ class FGym {
         return self::class;
     }
 
+    public static function bind($smtm,EGym $gym) {
+        $stmt->bindValue(":gymID", $gym->getGymId(), PDO::PARAM_INT);
+
+    }  
+
 }

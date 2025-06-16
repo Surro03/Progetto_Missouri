@@ -43,7 +43,7 @@ class ECommunication {
     }
 
     // Getters
-    public function getId(): int {
+    public function getIdCommunication(): int {
         return $this->idCommunication;
     }
 
@@ -65,10 +65,6 @@ class ECommunication {
 
     public function getSubject(): string {
         return $this->subject;
-    }
-
-    public function isBanned(): bool {
-        return $this->removed;
     }
 
     // Setters

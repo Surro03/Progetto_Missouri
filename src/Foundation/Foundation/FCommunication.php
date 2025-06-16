@@ -25,4 +25,13 @@ class FCommunication {
         return self::class;
     }
 
+    
+    public static function bind($smtm,ECommunication $communication) {
+        $stmt->bindValue(":idCommunicaton", $communication->getIdCommunication(), PDO::PARAM_INT);
+        $stmt->bindValue(":text", $communication->getText(), PDO::PARAM_STR);
+        $stmt->bindValue(":crationDate",$communication->getCreationDate(), PDO::PARAM_STR);
+        $stmt->bindValue(":idUser", $communication->getIdUser(), PDO::PARAM_INT);
+        $stmt->bindValue(":subject", $communication->getSubject(), PDO::PARAM_STR);
+    }  
+
 }

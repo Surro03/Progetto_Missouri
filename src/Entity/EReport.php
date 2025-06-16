@@ -39,59 +39,75 @@ class EReport {
         $this->setTime();
     }
 
-    // Static entity name getter
-    public static function getEntity(): string {
-        return self::$entity;
-    }
-
-    // ID getter/setter
-    public function getId() {
-        return $this->reportId;
-    }
-
-    public function setId($id) {
-        $this->reportId = $id;
-    }
-
-    // Text getter
-    public function getText() {
-        return $this->text;
-    }
-
-    // Date getters/setters
-    public function getTime(): DateTime {
-        return $this->creationDate;
-    }
 
     private function setTime() {
         $this->creationDate = new DateTime("now");
     }
 
-    public function getTimeStr(): string {
-        return $this->creationDate->format('Y-m-d H:i:s');
+    public function setReportId($id) {
+        $this->reportId = $id;
     }
 
+    public function setText(string $text): void {
+        $this->text = $text;
+    }
+    
+    public function setUserId(int $userId): void {
+        $this->userId = $userId;
+    }
+    
     public function setCreationTime(DateTime $dateTime): void {
         $this->creationDate = $dateTime;
     }
 
-    // Ban/Removed status
-    public function isBanned(): bool {
-        return $this->removed;
+    // Static entity name getter
+    public static function getEntity(): string {
+        return self::$entity;
     }
 
-    public function setBan(bool $removed): void {
-        $this->removed = $removed;
+    public function setTopic(string $topic): void {
+        $this->topic = $topic;
     }
 
-    // User getter
-    public function getUser() {
-        return $this->user;
-    }
-
+    // ID getter
     public function getReportId() {
         return $this->reportId;
     }
+    // Date getters
+    public function getCreationTime(): DateTime {
+        return $this->creationDate;
+    }
+    // Text getter
+    public function getText() {
+        return $this->text;
+    }
+
+    public function getTopic() {
+        return $this->topic;
+    }
+
+    public function getUserId(): int {
+        return $this->userId;
+    }
+    
+    public function getCreationTimeStr(): string {
+        return $this->creationDate->format('Y-m-d H:i:s');
+    }
+
+    //Status methods
+    public function isRemoved(): bool {
+        return $this->removed;
+    }
+
+    public function Remove(): void {
+        $this->removed = true;
+    }
+
+    public function Restore(): void {
+        $this->removed = true;
+    }
+
+
 
     // Debug output
     public function __toString(): string {

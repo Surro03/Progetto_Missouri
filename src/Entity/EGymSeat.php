@@ -12,7 +12,7 @@ class EGymSeat extends ESeat {
     private int $gymId;
 
     public function __construct(int $seatId, int $gymId, bool $status) {
-        parent::__construct($seatId, $status);
+        parent::__construct($seatId);
         $this->gymId = $gymId;
     }
 

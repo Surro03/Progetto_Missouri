@@ -37,7 +37,7 @@ class FDataBase {
     }
 /**
      *  Method to store an object in the database
-     * @param String $class is the class name of the object entity we want to store
+     * @param String $class is the foundation class name of the object entity we want to store
      * @param Object $object is the object we want to store
      */
     public function storeObject($class,$obj){

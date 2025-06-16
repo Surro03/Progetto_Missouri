@@ -14,20 +14,34 @@ abstract class ESeat {
     #[ORM\Column(type: 'boolean')]
     protected bool $isAvailable;
 
-    public function __construct(int $seatId, bool $isAvailable = true) {
+    public function __construct(int $seatId) {
         $this->seatId = $seatId;
-        $this->isAvailable = $isAvailable;
+        $this->isAvailable = True;
     }
 
     public function getSeatId(): int {
         return $this->seatId;
     }
 
-    public function isOccupied(): bool {
+    public function isAvailable(): bool {
         return $this->isAvailable;
     }
 
-    public function setOccupied(bool $status): void {
-        $this->isAvailable = $status;
+    public function setOccupied(): void{
+        if(!$this->isAvailable){
+            throw new ErrorException("Il posto è già occupato.");
+        }
+        else{
+        $this->isAvailable = False;
+        }
+    }
+    
+    public function setAvailable(): void{
+        if($this->isAvailable){
+            throw new ErrorException("Il posto è già libero.");
+        }
+        else{
+        $this->isAvailable = True;
+        }
     }
 }
