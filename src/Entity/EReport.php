@@ -34,7 +34,6 @@ class EReport {
     #[ORM\JoinColumn(name: "studentId", referencedColumnName: "studentId", nullable: false)]
     private ?EStudent $student = null;
 
-    private static $entity = EReport::class;
     // Constructor
     public function __construct($topic, $text, $reportId, $userId ) {
         $this->topic = $topic;
